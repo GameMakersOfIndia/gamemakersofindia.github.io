@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Thank You! — Game Makers Of India</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/pages.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Pixel cursor canvas -->
+  <canvas id="cursorCanvas" style="position:fixed;top:0;left:0;pointer-events:none;z-index:9999;"></canvas>
+
+  <!-- NAV -->
+  <nav class="pixel-nav">
+    <div class="nav-logo"><a href="../index.html"><span class="pixel-blink">◀</span> GAME MAKERS OF INDIA</a></div>
+    <ul class="nav-links">
+      <li><a href="../index.html">[ HOME ]</a></li>
+      <li><a href="../index.html#course">[ COURSE ]</a></li>
+      <li><a href="feedback.html">[ FEEDBACK ]</a></li>
+    </ul>
+    <div class="nav-lives">♥ ♥ ♥</div>
+  </nav>
+
+  <!-- THANK YOU HERO -->
+  <section class="ty-hero">
+    <div class="scanlines"></div>
+    <div class="stars" id="stars"></div>
+
+    <div class="ty-content">
+      <!-- Animated trophy -->
+      <div class="ty-trophy" id="trophy">🏆</div>
+
+      <div class="ty-badge pixel-box">ACHIEVEMENT UNLOCKED!</div>
+
+      <h1 class="ty-title">
+        <span class="ty-line1">THANK YOU!</span>
+        <span class="ty-line2">PLAYER ONE</span>
+      </h1>
+
+      <div class="ty-message pixel-box-dark">
+        <p class="vt-text">
+          You have just taken the first step toward becoming a 
+          <span class="highlight">Game Developer!</span>
+        </p>
+        <p class="vt-text">
+          Thank you for enrolling in <span class="highlight">Unity 6 Game Development 
+          for Beginners</span>. Get ready to build your first 2D game in 
+          Hindi / Urdu!
+        </p>
+        <p class="vt-text">
+          📧 Questions? Reach us at 
+          <!-- TODO: This is the email address provided -->
+          <a class="highlight" href="mailto:GameMakersofindia@gmail.com">GameMakersofindia@gmail.com</a>
+        </p>
+      </div>
+
+      <!-- XP bar animation -->
+      <div class="xp-section">
+        <div class="xp-label">XP GAINED</div>
+        <div class="xp-bar-wrap pixel-box">
+          <div class="xp-fill" id="xpFill"></div>
+        </div>
+        <div class="xp-value">+1000 XP ★</div>
+      </div>
+
+      <!-- Stats unlocked -->
+      <div class="ty-stats">
+        <div class="ty-stat pixel-box">
+          <div class="ts-icon">🎮</div>
+          <div class="ts-val">UNITY 6</div>
+          <div class="ts-lbl">ENGINE UNLOCKED</div>
+        </div>
+        <div class="ty-stat pixel-box">
+          <div class="ts-icon">📖</div>
+          <div class="ts-val">17+</div>
+          <div class="ts-lbl">LESSONS AWAIT</div>
+        </div>
+        <div class="ty-stat pixel-box">
+          <div class="ts-icon">🎯</div>
+          <div class="ts-val">2D GAME</div>
+          <div class="ts-lbl">YOUR FIRST BUILD</div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="ty-cta">
+        <!-- TODO: Replace # with your actual Udemy course link -->
+        <a href="#" class="pixel-btn btn-yellow">▶ GO TO COURSE</a>
+        <a href="feedback.html" class="pixel-btn btn-white">◈ LEAVE FEEDBACK</a>
+        <a href="../index.html" class="pixel-btn btn-green">← BACK HOME</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="pixel-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">GAME MAKERS OF INDIA</div>
+      <p class="footer-copy">© 2025 GAME MAKERS OF INDIA. PRESS START TO MAKE GAMES. ♥</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    // XP bar animate on load
+    window.addEventListener('load', () => {
+      const fill = document.getElementById('xpFill');
+      let w = 0;
+      const iv = setInterval(() => {
+        w += 2;
+        fill.style.width = w + '%';
+        if (w >= 100) clearInterval(iv);
+      }, 20);
+    });
+
+    // Trophy bounce
+    const trophy = document.getElementById('trophy');
+    let scale = 1, dir = 1;
+    function bounceTrophy() {
+      scale += dir * 0.02;
+      if (scale > 1.2) dir = -1;
+      if (scale < 0.9) dir = 1;
+      trophy.style.transform = `scale(${scale.toFixed(2)})`;
+      requestAnimationFrame(bounceTrophy);
+    }
+    bounceTrophy();
+  </script>
+</body>
+</html>

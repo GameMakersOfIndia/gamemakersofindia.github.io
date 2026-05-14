@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Game Makers Of India – Unity 6 Course</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Pixel / retro font from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323:wght@400&display=swap" rel="stylesheet">
+  <!-- Font Awesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       CUSTOM PIXEL CURSOR
+  ========================================== -->
+  <canvas id="cursorCanvas" style="position:fixed;top:0;left:0;pointer-events:none;z-index:9999;"></canvas>
+
+  <!-- ==========================================
+       NAV BAR
+  ========================================== -->
+  <nav class="pixel-nav">
+    <div class="nav-logo">
+      <span class="pixel-blink">&#9654;</span> GAME MAKERS OF INDIA
+    </div>
+    <ul class="nav-links">
+      <li><a href="#course">[ COURSE ]</a></li>
+      <li><a href="#learn">[ LEARN ]</a></li>
+      <li><a href="#platforms">[ ENROLL ]</a></li>
+      <li><a href="pages/feedback.html">[ FEEDBACK ]</a></li>
+      <li><a href="pages/thankyou.html">[ THANK YOU ]</a></li>
+    </ul>
+    <div class="nav-lives">
+      <i class="fa-solid fa-heart"></i>
+      <i class="fa-solid fa-heart"></i>
+      <i class="fa-solid fa-heart"></i>
+    </div>
+  </nav>
+
+  <!-- ==========================================
+       HERO SECTION
+  ========================================== -->
+  <section class="hero">
+    <div class="scanlines"></div>
+
+    <!-- Pixel stars background -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Floating pixel clouds -->
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge pixel-box">[ NEW COURSE ]</div>
+      <h1 class="hero-title">
+        <span class="title-line1">UNITY 6</span>
+        <span class="title-line2">GAME DEVELOPMENT</span>
+        <span class="title-line3">for beginners</span>
+      </h1>
+      <p class="hero-lang pixel-tag">&#9658; HINDI / URDU &#9668;</p>
+      <p class="hero-sub">Build Your First 2D Game — Step by Step</p>
+
+      <!-- Pixel character sprite animation -->
+      <div class="hero-sprite-area">
+        <!-- Player character (white robot with gun) -->
+        <div class="sprite-char" id="heroChar">
+          <img src="images/player.png" alt="Player" class="sprite-img player-sprite" />
+        </div>
+        <!-- Enemy character (red blob) -->
+        <div class="sprite-char enemy-char" id="enemyChar">
+          <img src="images/enemy.png" alt="Enemy" class="sprite-img enemy-sprite" />
+        </div>
+        <div class="ground-line"></div>
+        <div class="platform p1"></div>
+        <div class="platform p2"></div>
+        <div class="coin-anim"><i class="fa-solid fa-star"></i></div>
+        <!-- Bullet fired from player -->
+        <div class="bullet-anim" id="bulletAnim"></div>
+      </div>
+
+      <div class="hero-cta">
+        <a href="#platforms" class="pixel-btn btn-yellow">&#9654; START COURSE</a>
+        <a href="#course" class="pixel-btn btn-white">&#9672; LEARN MORE</a>
+      </div>
+
+      <div class="hero-email">
+        <i class="fa-solid fa-envelope"></i>
+        <a href="mailto:gamemakersofindia@gmail.com">GameMakersOfIndia@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       COURSE INTRO SECTION
+  ========================================== -->
+  <section class="section-dark" id="course">
+    <div class="section-header">
+      <span class="pixel-tag-sm">STAGE 01</span>
+      <h2 class="section-title">COURSE INTRODUCTION</h2>
+      <div class="pixel-divider">&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;</div>
+    </div>
+
+    <div class="intro-grid">
+      <div class="intro-text pixel-box-dark">
+        <p class="vt-text">
+          This course is designed for anyone who wants to start their journey in
+          game development using <span class="highlight">Unity 6</span>. Instead of
+          just learning theory, you will <span class="highlight">build a complete 2D
+          game step by step</span> and understand how different systems in a real
+          game work together.
+        </p>
+        <p class="vt-text">
+          The course is explained in <span class="highlight">Hindi / Urdu</span>,
+          making it easier to understand concepts clearly, especially if you are a
+          beginner or someone who struggles with English-based tutorials.
+        </p>
+        <p class="vt-text">
+          You do not need any prior experience in Unity or programming. Everything
+          is explained from the basics, and gradually we move towards more practical
+          systems like player mechanics, shooting, enemies, UI, and game management.
+        </p>
+        <p class="vt-text">
+          By the end, you will have a <span class="highlight">complete game project</span>
+          and a strong foundation to start creating your own games.
+        </p>
+      </div>
+
+      <div class="intro-stats">
+        <div class="stat-card pixel-box">
+          <div class="stat-icon"><i class="fa-solid fa-gamepad"></i></div>
+          <div class="stat-num">17+</div>
+          <div class="stat-label">MODULES</div>
+        </div>
+        <div class="stat-card pixel-box">
+          <div class="stat-icon"><i class="fa-solid fa-globe"></i></div>
+          <div class="stat-num lang-full">Hindi / Urdu</div>
+          <div class="stat-label">LANGUAGE</div>
+        </div>
+        <div class="stat-card pixel-box">
+          <div class="stat-icon"><i class="fa-solid fa-bolt"></i></div>
+          <div class="stat-num">2D</div>
+          <div class="stat-label">GAME BUILD</div>
+        </div>
+        <div class="stat-card pixel-box">
+          <div class="stat-icon"><i class="fa-solid fa-trophy"></i></div>
+          <div class="stat-num">0&#8594;1</div>
+          <div class="stat-label">BEGINNER OK</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       WHAT YOU WILL LEARN
+  ========================================== -->
+  <section class="section-mid" id="learn">
+    <div class="section-header">
+      <span class="pixel-tag-sm">STAGE 02</span>
+      <h2 class="section-title">WHAT YOU WILL LEARN</h2>
+      <div class="pixel-divider">&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;</div>
+    </div>
+
+    <div class="learn-grid">
+      <div class="learn-card" data-item="01">
+        <div class="card-icon"><i class="fa-solid fa-cubes"></i></div>
+        <div class="card-title">Unity 6 Fundamentals &amp; Workflow</div>
+      </div>
+      <div class="learn-card" data-item="02">
+        <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
+        <div class="card-title">GameObjects &amp; Components</div>
+      </div>
+      <div class="learn-card" data-item="03">
+        <div class="card-icon"><i class="fa-solid fa-gamepad"></i></div>
+        <div class="card-title">Player Movement, Jump &amp; Gravity</div>
+      </div>
+      <div class="learn-card" data-item="04">
+        <div class="card-icon"><i class="fa-solid fa-camera"></i></div>
+        <div class="card-title">Camera Follow with Smooth Motion</div>
+      </div>
+      <div class="learn-card" data-item="05">
+        <div class="card-icon"><i class="fa-solid fa-person-running"></i></div>
+        <div class="card-title">Animation (Idle, Run, Jump States)</div>
+      </div>
+      <div class="learn-card" data-item="06">
+        <div class="card-icon"><i class="fa-solid fa-gun"></i></div>
+        <div class="card-title">Shooting System &amp; Bullet Mechanics</div>
+      </div>
+      <div class="learn-card" data-item="07">
+        <div class="card-icon"><i class="fa-solid fa-ghost"></i></div>
+        <div class="card-title">Enemy AI Behavior &amp; Health System</div>
+      </div>
+      <div class="learn-card" data-item="08">
+        <div class="card-icon"><i class="fa-solid fa-star"></i></div>
+        <div class="card-title">Collectibles &amp; Trigger-Based Systems</div>
+      </div>
+      <div class="learn-card" data-item="09">
+        <div class="card-icon"><i class="fa-solid fa-image"></i></div>
+        <div class="card-title">UI Design (Canvas, Buttons, Panels)</div>
+      </div>
+      <div class="learn-card" data-item="10">
+        <div class="card-icon"><i class="fa-solid fa-chess-pawn"></i></div>
+        <div class="card-title">Game Manager &amp; Singleton Concept</div>
+      </div>
+      <div class="learn-card" data-item="11">
+        <div class="card-icon"><i class="fa-solid fa-map"></i></div>
+        <div class="card-title">Creating &amp; Managing Multiple Levels</div>
+      </div>
+      <div class="learn-card" data-item="12">
+        <div class="card-icon"><i class="fa-solid fa-music"></i></div>
+        <div class="card-title">Audio Manager for Sound Effects</div>
+      </div>
+      <div class="learn-card" data-item="13">
+        <div class="card-icon"><i class="fa-solid fa-bug"></i></div>
+        <div class="card-title">Debugging &amp; Fixing Common Issues</div>
+      </div>
+      <div class="learn-card" data-item="14">
+        <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
+        <div class="card-title">Build for Windows PC</div>
+      </div>
+      <div class="learn-card" data-item="15">
+        <div class="card-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+        <div class="card-title">Export Your Game for Android</div>
+      </div>
+      <div class="learn-card" data-item="16">
+        <div class="card-icon"><i class="fa-brands fa-github"></i></div>
+        <div class="card-title">Basic GitHub Setup for Version Control</div>
+      </div>
+      <div class="learn-card" data-item="17">
+        <div class="card-icon"><i class="fa-solid fa-gear"></i></div>
+        <div class="card-title">Preparing &amp; Optimizing Your Game</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       PLATFORMS / ENROLL
+  ========================================== -->
+  <section class="section-dark" id="platforms">
+    <div class="section-header">
+      <span class="pixel-tag-sm">STAGE 03</span>
+      <h2 class="section-title">CHOOSE YOUR PLATFORM</h2>
+      <div class="pixel-divider">&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;&#9619;</div>
+    </div>
+
+    <div class="platform-grid">
+      <a href="https://www.udemy.com/course/unity-6-game-development-full-course-in-hindi-urdu/?referralCode=447D1B73BFA11FF35E85" class="platform-card udemy" title="Enroll on Udemy" target="_blank" rel="noopener">
+        <div class="platform-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="platform-name">UDEMY</div>
+        <div class="platform-desc">Lifetime access, certificate, mobile app</div>
+        <div class="platform-cta pixel-btn btn-orange">ENROLL NOW &#9654;</div>
+      </a>
+
+      <a href="https://www.youtube.com/@GameMakersOfIndia" class="platform-card youtube" title="Watch on YouTube" target="_blank" rel="noopener">
+        <div class="platform-icon"><i class="fa-brands fa-youtube"></i></div>
+        <div class="platform-name">YOUTUBE</div>
+        <div class="platform-desc">Free videos, previews &amp; walkthroughs</div>
+        <div class="platform-cta pixel-btn btn-red">WATCH NOW &#9654;</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       CONTACT SECTION
+  ========================================== -->
+  <section class="section-mid contact-section">
+    <div class="section-header">
+      <span class="pixel-tag-sm">CONNECT</span>
+      <h2 class="section-title">FIND US</h2>
+    </div>
+    <div class="contact-row">
+      <div class="contact-item pixel-box">
+        <span class="c-icon"><i class="fa-solid fa-envelope"></i></span>
+        <a href="mailto:gamemakersofindia@gmail.com">GameMakersOfIndia@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       PIXEL FOOTER
+  ========================================== -->
+  <footer class="pixel-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">GAME MAKERS OF INDIA</div>
+      <div class="pixel-divider sm">&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;</div>
+      <div class="footer-links">
+        <a href="index.html">HOME</a>
+        <a href="#course">COURSE</a>
+        <a href="pages/feedback.html">FEEDBACK</a>
+        <a href="pages/thankyou.html">THANK YOU</a>
+        <a href="https://www.udemy.com/course/unity-6-game-development-full-course-in-hindi-urdu/?referralCode=447D1B73BFA11FF35E85" target="_blank" rel="noopener">UDEMY</a>
+        <a href="https://www.youtube.com/@GameMakersOfIndia" target="_blank" rel="noopener">YOUTUBE</a>
+      </div>
+      <p class="footer-copy">&#169; 2026 GAME MAKERS OF INDIA. PRESS START TO MAKE GAMES. <i class="fa-solid fa-heart" style="color:var(--red);"></i></p>
+    </div>
+    <!-- Pixel walking character at footer -->
+    <div class="footer-walker">
+      <div class="walker-sprite"></div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
