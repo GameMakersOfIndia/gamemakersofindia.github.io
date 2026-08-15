@@ -7,6 +7,16 @@
 
 const revealEls = document.querySelectorAll('.reveal');
 
+const showVisibleReveals = () => {
+  revealEls.forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    const entersViewport = rect.top < window.innerHeight * 0.92 && rect.bottom > 0;
+    if (entersViewport) {
+      el.classList.add('visible');
+    }
+  });
+};
+
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -17,3 +27,7 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 
 revealEls.forEach(el => revealObserver.observe(el));
+
+window.addEventListener('load', showVisibleReveals);
+window.addEventListener('hashchange', () => requestAnimationFrame(showVisibleReveals));
+requestAnimationFrame(showVisibleReveals);
