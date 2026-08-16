@@ -387,18 +387,18 @@ img {
   color: var(--white);
   font-size: clamp(54px, 9vw, 122px);
   text-shadow:
-    0 4px 0 #000,
-    0 12px 22px rgba(0, 0, 0, 0.66),
-    0 0 20px rgba(95, 178, 255, 0.16);
+    6px 7px 0 #000,
+    0 24px 34px rgba(0, 0, 0, 0.72),
+    0 0 26px rgba(255, 255, 255, 0.28);
 }
 
 .title-yellow {
   color: var(--yellow);
   font-size: clamp(70px, 13vw, 178px);
   text-shadow:
-    0 4px 0 #000,
-    0 14px 24px rgba(0, 0, 0, 0.7),
-    0 0 28px rgba(255, 211, 8, 0.34);
+    7px 8px 0 #000,
+    0 26px 36px rgba(0, 0, 0, 0.78),
+    0 0 36px rgba(255, 211, 8, 0.48);
 }
 
 .hero-sub {
@@ -535,52 +535,31 @@ img {
   box-shadow: var(--shadow-pop);
   transform: rotate(1.4deg);
   transition: transform 260ms ease;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
 }
 
 .thumb-frame:hover {
   transform: rotate(0deg) translateY(-4px);
 }
 
-.thumb-chip {
-  position: absolute;
-  z-index: 6;
-  top: 15px;
-  right: 15px;
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  min-height: 34px;
-  padding: 7px 12px;
-  color: var(--ink);
-  font: 900 13px var(--font-body);
-  border: 3px solid #000;
-  border-radius: 8px;
-  background: var(--yellow);
-  box-shadow: 4px 4px 0 #000;
-}
-
-.thumb-media-box {
-  position: relative;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  border-radius: 4px;
-  background: var(--blue-900);
-}
-
-.thumb-media-box img {
+.thumb-frame > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 4px;
 }
 
-.thumb-media-box::after {
+.thumb-frame::after {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: 8px;
+  border-radius: 4px;
   background:
     linear-gradient(90deg, transparent, rgba(255, 211, 8, 0.1)),
     radial-gradient(circle at 56% 50%, transparent 0 13%, rgba(0, 0, 0, 0.3) 64%);
   pointer-events: none;
+  z-index: 1;
 }
 
 .play-btn {
@@ -634,6 +613,8 @@ img {
   position: relative;
   min-height: 168px;
   overflow: hidden;
+  --shot-distance: 250px;
+  --shot-rise: -10px;
   border: 4px solid #000;
   border-radius: 8px;
   background:
@@ -687,7 +668,7 @@ img {
 
 .enemy-unit {
   right: 7%;
-  bottom: -15px;
+  bottom: -29px;
   animation-delay: 0.38s;
 }
 
@@ -697,7 +678,7 @@ img {
 }
 
 .enemy-unit img {
-  width: 166px;
+  width: 200px;
   transform: scaleX(-1);
   filter: drop-shadow(7px 9px 0 rgba(0, 0, 0, 0.62));
 }
@@ -710,7 +691,7 @@ img {
 
 .muzzle-flash {
   position: absolute;
-  top: 43px;
+  top: 31px;
   right: -10px;
   width: 22px;
   height: 22px;
@@ -724,7 +705,7 @@ img {
 
 .bullet {
   position: absolute;
-  top: 52px;
+  top: 39px;
   right: -4px;
   width: 26px;
   height: 7px;
@@ -737,8 +718,8 @@ img {
 
 .hit-flash {
   position: absolute;
-  top: 47px;
-  left: 45px;
+  top: 59px;
+  left: 78px;
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -802,12 +783,12 @@ img {
   }
   33% {
     opacity: 1;
-    transform: translateX(clamp(180px, 28vw, 310px));
+    transform: translate(var(--shot-distance), var(--shot-rise));
   }
   35%,
   100% {
     opacity: 0;
-    transform: translateX(clamp(180px, 28vw, 310px));
+    transform: translate(var(--shot-distance), var(--shot-rise));
   }
 }
 
@@ -1405,6 +1386,8 @@ body.lang-hi .section-title {
 
   .game-hit {
     min-height: 136px;
+    --shot-distance: 180px;
+    --shot-rise: -8px;
   }
 
   .stage-tree {
@@ -1418,7 +1401,7 @@ body.lang-hi .section-title {
 
   .enemy-unit {
     right: 3%;
-    bottom: -8px;
+    bottom: -19px;
   }
 
   .player-unit img {
@@ -1426,24 +1409,24 @@ body.lang-hi .section-title {
   }
 
   .enemy-unit img {
-    width: 132px;
+    width: 158px;
   }
 
   .muzzle-flash {
-    top: 32px;
+    top: 26px;
     width: 17px;
     height: 17px;
   }
 
   .bullet {
-    top: 40px;
+    top: 32px;
     width: 20px;
     height: 6px;
   }
 
   .hit-flash {
-    top: 32px;
-    left: 34px;
+    top: 52px;
+    left: 58px;
     width: 34px;
     height: 34px;
   }
@@ -1499,12 +1482,6 @@ body.lang-hi .section-title {
 
   .title-yellow {
     font-size: 66px;
-  }
-
-  .thumb-chip {
-    top: 10px;
-    right: 10px;
-    font-size: 11px;
   }
 
   .play-btn {
